@@ -1,0 +1,50 @@
+{
+  "note:9:40:on": {
+    "midi_type": "note",
+    "channel": 9,
+    "number": 40,
+    "trigger": "on",
+    "action": {
+      "type": "launch_app",
+      "value": "firefox",
+      "label": ""
+    },
+    "name": ""
+  },
+  "cc:0:73:change": {
+    "midi_type": "cc",
+    "channel": 0,
+    "number": 73,
+    "trigger": "change",
+    "action": {
+      "type": "volume",
+      "value": "",
+      "label": ""
+    },
+    "name": ""
+  },
+  "note:0:72:on": {
+    "midi_type": "note",
+    "channel": 0,
+    "number": 72,
+    "trigger": "on",
+    "action": {
+      "type": "keystroke",
+      "value": "ctrl+right",
+      "label": ""
+    },
+    "name": ""
+  },
+  "note:0:71:on": {
+    "midi_type": "note",
+    "channel": 0,
+    "number": 71,
+    "trigger": "on",
+    "action": {
+      "type": "keystroke",
+      "value": "ctrl+left",
+      "label": ""
+    },
+    "name": ""
+  }
+}

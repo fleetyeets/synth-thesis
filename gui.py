@@ -251,10 +251,19 @@ class App(ctk.CTk):
                     _held_mods.add(MOD_MAP[key])
                     return
                 # non-modifier — capture combo
-                if hasattr(key, "char") and key.char:
-                    final = key.char.lower()
-                elif hasattr(key, "name") and key.name:
+                # Check named special keys first (space, enter, arrows, etc.)
+                if isinstance(key, kb_module.Key):
                     final = key.name.lower()
+                elif hasattr(key, "char") and key.char and key.char.isascii() and key.char.isprintable():
+                    # plain printable ASCII character
+                    final = key.char.lower()
+                elif hasattr(key, "vk") and key.vk:
+                    # modifier transformed the char (e.g. alt+space → nbsp) — look up by vk
+                    from actions import _AS_KEYCODES
+                    vk_to_name = {v: k for k, v in _AS_KEYCODES.items()}
+                    final = vk_to_name.get(key.vk)
+                    if not final:
+                        return
                 else:
                     return
                 parts = [m for m in ("cmd", "ctrl", "alt", "shift") if m in _held_mods]

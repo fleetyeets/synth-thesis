@@ -46,5 +46,17 @@
       "label": ""
     },
     "name": ""
+  },
+  "note:9:41:on": {
+    "midi_type": "note",
+    "channel": 9,
+    "number": 41,
+    "trigger": "on",
+    "action": {
+      "type": "keystroke",
+      "value": "alt+space",
+      "label": ""
+    },
+    "name": ""
   }
 }

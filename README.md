@@ -4,6 +4,10 @@ MIDI controller → system action mapper for macOS. Bind any key, pad, or knob o
 
 Runs as a background daemon at boot via launchd. A GUI lets you configure mappings without touching any config files.
 
+![synth-thesis GUI](screenshot.png)
+
+![Akai MPK mini](keyboard.jpeg)
+
 ---
 
 ## Requirements

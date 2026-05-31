@@ -6,11 +6,11 @@ A running log of how this got built, the decisions made, and the things that bro
 
 ## The idea
 
-I wanted my Akai MPK mini to do more than make noise. Sitting on my desk with 25 keys, 8 pads, 8 knobs, and a handful of transport buttons — that's a lot of programmable surface area doing nothing useful outside a DAW. The goal: a translation layer that lets any control on the keyboard trigger any system action. Launch apps, send keystrokes, run scripts, control volume. A hardware macro pad, basically, but with a piano keyboard and the ability to bind anything.
+I have a midi synth that's been collecting dust ever since I realize I have no musical talent :). I thought I could make it into a homebrew Stream Deck to control volume with a knob, use pads to launch apps, and keys for various macros. I didn't write any of the code myself - I'm not a programmer - but Claude got us there pretty quickly.
 
-The constraints were simple: it should run in the background without me thinking about it, configuration should be tactile (press the button you want to bind, not type a note number), and it should survive reboots.
+![Akai MPK mini sitting on top of a mechanical keyboard](keyboard.jpeg)
 
----
+Claude's summary:
 
 ## Stack
 
@@ -40,6 +40,8 @@ The GUI (`gui.py`) owns the `mappings` dict, passes it by reference to the liste
 ---
 
 ## Learn mode
+
+![synth-thesis GUI showing live MIDI feed and mapped controls](screenshot.png)
 
 The configuration UX is the core of the thing. Rather than asking you to look up note numbers or CC IDs, you click **[ LEARN ]**, press whatever you want to bind, and a dialog opens pre-filled with what was just received. Trigger selector, action type dropdown, value field, save. That's it.
 

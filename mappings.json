@@ -1,36 +1,12 @@
 {
-  "note:9:40:on": {
+  "note:9:36:on": {
     "midi_type": "note",
     "channel": 9,
-    "number": 40,
+    "number": 36,
     "trigger": "on",
     "action": {
-      "type": "launch_app",
-      "value": "firefox",
-      "label": ""
-    },
-    "name": ""
-  },
-  "cc:0:73:change": {
-    "midi_type": "cc",
-    "channel": 0,
-    "number": 73,
-    "trigger": "change",
-    "action": {
-      "type": "volume",
-      "value": "",
-      "label": ""
-    },
-    "name": ""
-  },
-  "note:0:72:on": {
-    "midi_type": "note",
-    "channel": 0,
-    "number": 72,
-    "trigger": "on",
-    "action": {
-      "type": "keystroke",
-      "value": "ctrl+right",
+      "type": "shell",
+      "value": "kitty",
       "label": ""
     },
     "name": ""
@@ -47,14 +23,158 @@
     },
     "name": ""
   },
-  "note:9:41:on": {
+  "note:0:72:on": {
     "midi_type": "note",
-    "channel": 9,
-    "number": 41,
+    "channel": 0,
+    "number": 72,
     "trigger": "on",
     "action": {
       "type": "keystroke",
-      "value": "alt+space",
+      "value": "ctrl+right",
+      "label": ""
+    },
+    "name": ""
+  },
+  "cc:0:73:change": {
+    "midi_type": "cc",
+    "channel": 0,
+    "number": 73,
+    "trigger": "change",
+    "action": {
+      "type": "volume",
+      "value": "",
+      "label": ""
+    },
+    "name": ""
+  },
+  "note:9:37:on": {
+    "midi_type": "note",
+    "channel": 9,
+    "number": 37,
+    "trigger": "on",
+    "action": {
+      "type": "launch_app",
+      "value": "Music",
+      "label": ""
+    },
+    "name": ""
+  },
+  "note:9:42:on": {
+    "midi_type": "note",
+    "channel": 9,
+    "number": 42,
+    "trigger": "on",
+    "action": {
+      "type": "launch_app",
+      "value": "Element",
+      "label": ""
+    },
+    "name": ""
+  },
+  "note:0:48:on": {
+    "midi_type": "note",
+    "channel": 0,
+    "number": 48,
+    "trigger": "on",
+    "action": {
+      "type": "keystroke",
+      "value": "ctrl+alt+1",
+      "label": ""
+    },
+    "name": ""
+  },
+  "note:0:50:on": {
+    "midi_type": "note",
+    "channel": 0,
+    "number": 50,
+    "trigger": "on",
+    "action": {
+      "type": "keystroke",
+      "value": "ctrl+alt+2",
+      "label": ""
+    },
+    "name": ""
+  },
+  "note:0:52:on": {
+    "midi_type": "note",
+    "channel": 0,
+    "number": 52,
+    "trigger": "on",
+    "action": {
+      "type": "keystroke",
+      "value": "ctrl+alt+3",
+      "label": ""
+    },
+    "name": ""
+  },
+  "note:0:53:on": {
+    "midi_type": "note",
+    "channel": 0,
+    "number": 53,
+    "trigger": "on",
+    "action": {
+      "type": "keystroke",
+      "value": "ctrl+alt+4",
+      "label": ""
+    },
+    "name": ""
+  },
+  "note:0:55:on": {
+    "midi_type": "note",
+    "channel": 0,
+    "number": 55,
+    "trigger": "on",
+    "action": {
+      "type": "keystroke",
+      "value": "ctrl+alt+5",
+      "label": ""
+    },
+    "name": ""
+  },
+  "note:9:38:on": {
+    "midi_type": "note",
+    "channel": 9,
+    "number": 38,
+    "trigger": "on",
+    "action": {
+      "type": "launch_app",
+      "value": "Signal",
+      "label": ""
+    },
+    "name": ""
+  },
+  "cc:0:77:change": {
+    "midi_type": "cc",
+    "channel": 0,
+    "number": 77,
+    "trigger": "change",
+    "action": {
+      "type": "brightness",
+      "value": "",
+      "label": ""
+    },
+    "name": ""
+  },
+  "cc:0:76:change": {
+    "midi_type": "cc",
+    "channel": 0,
+    "number": 76,
+    "trigger": "change",
+    "action": {
+      "type": "shell",
+      "value": "Works. Unlike volume/brightness, `nightlight temp` takes an absolute 0\u2013100 value, which maps perfectly to `{pct}` \u2014 no delta tracking needed. This is the simplest possible knob ac\nnightlight on && nightlight temp {pct}",
+      "label": ""
+    },
+    "name": "warmth"
+  },
+  "note:0:57:on": {
+    "midi_type": "note",
+    "channel": 0,
+    "number": 57,
+    "trigger": "on",
+    "action": {
+      "type": "keystroke",
+      "value": "ctrl+alt+6",
       "label": ""
     },
     "name": ""

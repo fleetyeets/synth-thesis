@@ -14,6 +14,7 @@ ACTION_TYPES = [
     "applescript",
     "keystroke",
     "volume",
+    "brightness",
 ]
 
 

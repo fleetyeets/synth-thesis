@@ -8,7 +8,8 @@ import webbrowser
 from pynput.keyboard import Controller, Key, HotKey
 
 _keyboard = Controller()
-_volume_prev_cc: int | None = None
+_volume_prev_cc:     int | None = None
+_brightness_prev_cc: int | None = None
 
 # Maps string token → pynput Key constant
 SPECIAL_KEYS = {
@@ -31,7 +32,13 @@ _AS_KEYCODES = {
     "f11": 103,"f12": 111,
     "space": 49, "enter": 36, "tab": 48, "esc": 53,
     "backspace": 51, "delete": 117,
+    "0": 29, "1": 18, "2": 19, "3": 20, "4": 21,
+    "5": 23, "6": 22, "7": 26, "8": 28, "9": 25,
 }
+
+# DDPM (Dell Display) hotkeys for brightness — F1=down, F2=up
+_BRIGHTNESS_STEP_KEY_UP   = "f2"
+_BRIGHTNESS_STEP_KEY_DOWN = "f1"
 _AS_MODS = {
     "cmd": "command down",
     "ctrl": "control down",
@@ -71,6 +78,24 @@ def _resolve(template: str, velocity: int) -> str:
 
 def _execute(action, velocity: int):
     try:
+        if action.type == "brightness":
+            global _brightness_prev_cc
+            if velocity == 0:
+                return
+            prev = _brightness_prev_cc
+            _brightness_prev_cc = velocity
+            if prev is None:
+                return
+            raw_delta = velocity - prev
+            step_delta = round(raw_delta * 16 / 127)
+            if step_delta == 0 and raw_delta != 0:
+                step_delta = 1 if raw_delta > 0 else -1
+            key = Key.f2 if step_delta > 0 else Key.f1
+            for _ in range(abs(step_delta)):
+                _keyboard.press(key)
+                _keyboard.release(key)
+            return
+
         if action.type == "volume":
             global _volume_prev_cc
             if velocity == 0:

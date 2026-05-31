@@ -229,6 +229,7 @@ class App(ctk.CTk):
             "applescript":  "Inline AppleScript. Use {value} or {pct} — e.g. 'set volume output volume {pct}'",
             "keystroke":    "Keys joined by + — or click ⏺ Record and press the shortcut",
             "volume":       "Maps knob position directly to system output volume. No value needed.",
+            "brightness":   "Maps knob to display brightness via DDPM hotkeys (F1/F2). No value needed.",
         }
 
         _kb_listener: list = [None]
@@ -342,7 +343,7 @@ class App(ctk.CTk):
 
         def _save():
             val = val_entry.get().strip()
-            if not val and action_type_var.get() != "volume":
+            if not val and action_type_var.get() not in ("volume", "brightness"):
                 messagebox.showerror("Missing value", "Enter a value for the action.")
                 return
             act = Action(
